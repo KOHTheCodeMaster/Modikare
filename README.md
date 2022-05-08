@@ -1,3 +1,8 @@
+# 3rd Commit - Added Search Filter Criteria
+1. Product Search Feature -> Filtering the products based on the input criteria.
+2. Added Angular Pipe 'ProductListFilterPipe' for filtering the search results.
+
+
 # 2nd Commit - Added Empty Component Skeleton Structure
 Components Structure:
 Nav-Header

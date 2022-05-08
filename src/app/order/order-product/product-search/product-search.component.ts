@@ -7,11 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductSearchComponent implements OnInit {
 
+  strSearch: string;
+
   constructor() { }
 
   ngOnInit(): void {
     console.log("Product Search Init.");
-    
+
   }
 
 }

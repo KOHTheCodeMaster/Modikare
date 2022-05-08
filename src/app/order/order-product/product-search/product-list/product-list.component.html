@@ -1,25 +1,26 @@
-<p>product-list works!</p>
+<!--<p>product-list works!</p>-->
 
 <div class="container-fluid basic-border-blue">
 
-    <div class="container-fluid">
-        <!-- Header Row -->
-        <div class="row basic-border-red">
-            <span class="col-lg-2">Product Code</span>
-            <span class="col-lg-4">Product Name</span>
-            <span class="col-lg-1">MRP</span>
-            <span class="col-lg-1">DP</span>
-            <span class="col-lg-1">BV</span>
-            <span class="col-lg-1">PV</span>
-            <span class="col-lg-2">Qty</span>
+  <div class="container-fluid">
 
-            <!-- code product mrp dp bv pv qty -->
-            <!-- 2    4       1   1  1  1  2 -->
-        </div>
-    </div>
-    <hr>
+    <!-- Header Row -->
+    <div class="row basic-border-red" id="product-list-header">
+      <span class="col-lg-2">Product Code</span>
+      <span class="col-lg-4">Product Name</span>
+      <span class="col-lg-1">MRP</span>
+      <span class="col-lg-1">DP</span>
+      <span class="col-lg-1">BV</span>
+      <span class="col-lg-1">PV</span>
+      <span class="col-lg-2">Qty</span>
 
-    <div *ngFor="let product of productList">
-        <app-product-item></app-product-item>
+      <!-- code product mrp dp bv pv qty -->
+      <!-- 2    4       1   1  1  1  2 -->
     </div>
+  </div>
+  <hr>
+
+  <div id="product-list-content" *ngFor="let product of (productList | productListFilterPipe:strSearch)">
+    <app-product-item [productModel]="product"></app-product-item>
+  </div>
 </div>

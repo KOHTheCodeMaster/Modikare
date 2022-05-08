@@ -11,6 +11,8 @@ import { ProductCategoryComponent } from './order/order-product/product-category
 import { ProductSearchComponent } from './order/order-product/product-search/product-search.component';
 import { ProductListComponent } from './order/order-product/product-search/product-list/product-list.component';
 import { ProductItemComponent } from './order/order-product/product-search/product-list/product-item/product-item.component';
+import {ProductListFilterPipe} from "./order/order-product/product-search/product-list/product-list-filter.pipe";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -23,12 +25,15 @@ import { ProductItemComponent } from './order/order-product/product-search/produ
     ProductCategoryComponent,
     ProductSearchComponent,
     ProductListComponent,
-    ProductItemComponent
+    ProductItemComponent,
+    ProductListFilterPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
