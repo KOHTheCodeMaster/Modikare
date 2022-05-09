@@ -16,4 +16,24 @@ export class ProductItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  /*
+    validateQty(inputElement: HTMLInputElement) {
+
+      let strInputQty = inputElement.value;
+      // inputElement.value = 'AAA'
+      console.log("L0G: validateQty(): strInputQty -> " + strInputQty)
+
+      let isNumber = !isNaN(+strInputQty);
+
+      if (!isNumber) {
+        inputElement.value = '0';
+        return;
+      }
+
+      let tempNumber = parseInt(strInputQty);
+      if (tempNumber < 0 || tempNumber > 1000) inputElement.value ="999";
+
+    }
+  */
 }

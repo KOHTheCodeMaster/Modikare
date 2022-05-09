@@ -1,16 +1,39 @@
 <div class="container-fluid ">
 
   <!-- Header Row -->
-  <div class="row basic-border-green">
-    <span class="col-lg-2">{{this.productModel.code}}</span>
-    <span class="col-lg-4">{{this.productModel.name}}</span>
-    <span class="col-lg-1">{{this.productModel.mrp}}</span>
-    <span class="col-lg-1">{{this.productModel.dp}}</span>
-    <span class="col-lg-1">{{this.productModel.bv}}</span>
-    <span class="col-lg-1">{{this.productModel.pv}}</span>
-    <span class="col-lg-2">{{this.productModel.qty}}</span>
+  <div class="row basic-border-green justify-content-center text-center align-items-center">
+    <span class="col-lg-2 basic-border-blue">{{this.productModel.code}}</span>
+    <span class="col-lg-4 basic-border-blue">{{this.productModel.name}}</span>
+    <span class="col-lg-1 basic-border-blue">{{this.productModel.mrp}}</span>
+    <span class="col-lg-1 basic-border-blue">{{this.productModel.dp}}</span>
+    <span class="col-lg-1 basic-border-blue">{{this.productModel.bv}}</span>
+    <span class="col-lg-1 basic-border-blue">{{this.productModel.pv}}</span>
 
-    <!-- code product mrp dp bv pv qty -->
-    <!-- 2    4       1   1  1  1  2 -->
+    <div id="product-item-qty" class="col-lg-2 basic-border-blue">
+
+      <div *ngIf="this.productModel.qty === 0; else qtyNotEmpty">
+        <button class="btn btn-success" (click)="this.productModel.qty = 1">ADD</button>
+      </div>
+
+      <ng-template #qtyNotEmpty>
+        <div class="row d-flex justify-content-center text-center">
+
+          <button class="col-lg-3 btn btn-sm btn-danger"
+                  (click)="productModel.qty = productModel.qty-1">-</button>
+          <span class="col-lg-3 m-0 p-0 basic-border-green overflow-auto"
+                [textContent]="productModel.qty"></span>
+          <!--        <input type="number" class="fw-bold basic-border-red p-1" [value]="productModel.qty">-->
+          <button class="col-lg-3 btn btn-sm btn-success"
+                  (click)="productModel.qty = productModel.qty+1">+</button>
+          <button class="col-lg-3 btn btn-sm btn-warning"
+                  (click)="productModel.qty = 0">X</button>
+
+        </div>
+      </ng-template>
+
+    </div>
+
+    <!-- code product mrp dp bv pv qty      -->
+    <!-- 2    4       1   1  1  1  - 2 + x  -->
   </div>
 </div>
