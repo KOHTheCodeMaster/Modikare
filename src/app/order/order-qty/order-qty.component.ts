@@ -1,16 +1,17 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {ProductModel} from '../product.model';
+import {Component, EventEmitter, Input, OnInit} from '@angular/core';
+import {ProductModel} from "../order-product/product-search/product-list/product.model";
+import {OrderService} from "../order.service";
 
 @Component({
-  selector: 'app-product-item',
-  templateUrl: './product-item.component.html',
-  styleUrls: ['./product-item.component.css']
+  selector: 'app-order-qty',
+  templateUrl: './order-qty.component.html',
+  styleUrls: ['./order-qty.component.css']
 })
-export class ProductItemComponent implements OnInit {
+export class OrderQtyComponent implements OnInit {
 
   @Input() public productModel: ProductModel;
 
-  constructor() {
+  constructor(private orderService: OrderService) {
   }
 
   ngOnInit(): void {
@@ -18,14 +19,17 @@ export class ProductItemComponent implements OnInit {
 
   decrementQtyBy1() {
     this.productModel.qty--;
+    this.orderService.cartUpdated(this.productModel, '-');
   }
 
   incrementQtyBy1() {
     this.productModel.qty++;
+    this.orderService.cartUpdated(this.productModel, '+');
   }
 
   resetQty() {
     this.productModel.qty = 0;
+    this.orderService.cartUpdated(this.productModel, 'x');
   }
 
 

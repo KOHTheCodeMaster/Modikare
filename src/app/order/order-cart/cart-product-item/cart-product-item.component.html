@@ -1,0 +1,39 @@
+<div class="">
+  <!--<p>Hola..!!</p>-->
+  <!--    <p>cart-product-item works!</p>-->
+
+  <!--   Header Row -->
+  <div class="row basic-border-green justify-content-center text-center align-items-center m-0 p-0">
+    <span class="col-lg-2 basic-border-blue">{{this.serialNo}}</span>
+    <div class="col-lg-5 basic-border-blue d-flex flex-column">
+      <span class=" basic-border-blue">{{this.productModel.name}}</span>
+      <span class=" basic-border-red">[{{this.productModel.code}}]</span>
+    </div>
+    <!-- Qty component -->
+    <div class="col-lg-3 basic-border-yellow m-0 p-0 ">
+      <app-order-qty [productModel]="productModel"></app-order-qty>
+    </div>
+    <div class="col-lg-2 basic-border-blue d-flex flex-column">
+      <span class="basic-border-blue">({{this.productModel.dp}})</span>
+      <span class="basic-border-blue">{{this.productModel.qty * this.productModel.dp}}</span>
+    </div>
+    <!--        <button class="col-lg-3 btn btn-sm btn-warning m-0 p-0"-->
+    <!--                (click)="resetQty()">x-->
+    <!--        </button>-->
+
+
+    <!--    &lt;!&ndash; sno  code  product dp  qty sub-total       &ndash;&gt;-->
+    <!--    &lt;!&ndash; 1    123   XYZ     10  2   20        [X]   &ndash;&gt;-->
+    <!--  </div>-->
+
+    <!--  &lt;!&ndash;6286822701 - Pack Soap Work No.&ndash;&gt;-->
+    <!--  <div class="row m-0 p-0 text-center">-->
+    <!--    &lt;!&ndash;      <div class="row basic-border-green justify-content-center text-center align-items-center">&ndash;&gt;-->
+    <!--    <span class="col-lg-2 basic-border-blue">S.No.</span>-->
+    <!--    <span class="col-lg-5 basic-border-blue">Name</span>-->
+    <!--    <div class="col-lg-3 basic-border-blue"></div>-->
+    <!--    <span class="col-lg-2 basic-border-blue">DP</span>-->
+    <!--  </div>-->
+
+  </div>
+</div>

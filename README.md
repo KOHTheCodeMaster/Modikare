@@ -1,3 +1,10 @@
+# 5th Commit - Updated Order Cart Component
+1. Order Cart updated & is in Sync with whatever products added / removed. 
+   Order Cart Component's cartProductList is in Sync with the Product-List Component's cartProductList.
+2. Components Added -> app-order-qty, app-cart-product-item
+3. Moved out Qty [Add, -, +] feature to separate component (app-order-qty)
+   which is used by app-product-item & app-cart-product-item
+
 # 4th Commit - Added Product Qty
 1. Product Qty Manipulation via Add, -, + buttons.
 

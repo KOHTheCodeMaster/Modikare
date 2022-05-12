@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {OrderSummaryModel} from "./order-summary.model";
 
 @Component({
@@ -8,7 +8,9 @@ import {OrderSummaryModel} from "./order-summary.model";
 })
 export class OrderSummaryComponent implements OnInit {
   public orderSummaryModel: OrderSummaryModel;
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit(): void {
     this.init();

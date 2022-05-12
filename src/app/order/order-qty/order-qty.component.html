@@ -1,0 +1,31 @@
+<div>
+
+  <div id="product-item-qty" class="basic-border-green">
+
+    <div *ngIf="this.productModel.qty === 0; else qtyNotEmpty">
+      <button class="btn btn-success" (click)="incrementQtyBy1()">ADD</button>
+    </div>
+
+    <ng-template #qtyNotEmpty>
+      <div class="row m-0 p-0 d-flex">
+
+        <button class="col-lg-4 btn btn-sm btn-danger"
+                (click)="decrementQtyBy1()">-
+        </button>
+        <!-- css class overflow-auto -->
+        <span class="col-lg-4 basic-border-green m-0 p-0"
+              [textContent]="this.productModel.qty"></span>
+        <!--        <input type="number" class="fw-bold basic-border-red p-1" [value]="this.productModel.qty">-->
+        <button class="col-lg-4 btn btn-sm btn-success"
+                (click)="incrementQtyBy1()">+
+        </button>
+        <!--        <button class="col-lg-3 btn btn-sm btn-warning m-0 p-0"-->
+        <!--                (click)="resetQty()">x-->
+        <!--        </button>-->
+
+      </div>
+    </ng-template>
+
+  </div>
+
+</div>
