@@ -1,15 +1,15 @@
 <div>
 
-  <div id="product-item-qty" class="basic-border-green">
+  <div id="product-item-qty" class="p-0 m-0 basic-border-green">
 
     <div *ngIf="this.productModel.qty === 0; else qtyNotEmpty">
-      <button class="btn btn-success" (click)="incrementQtyBy1()">ADD</button>
+      <button class="btn btn-primary btn-sm" (click)="incrementQtyBy1()">ADD</button>
     </div>
 
-    <ng-template #qtyNotEmpty>
-      <div class="row m-0 p-0 d-flex">
+    <ng-template #qtyNotEmpty class="">
+      <div class="row m-0 p-0 ">
 
-        <button class="col-lg-4 btn btn-sm btn-danger"
+        <button class="col-lg-4 btn btn-sm btn-warning p-0 m-0"
                 (click)="decrementQtyBy1()">-
         </button>
         <!-- css class overflow-auto -->

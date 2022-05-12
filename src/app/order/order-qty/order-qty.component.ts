@@ -27,29 +27,11 @@ export class OrderQtyComponent implements OnInit {
     this.orderService.cartUpdated(this.productModel, '+');
   }
 
+/*
   resetQty() {
     this.productModel.qty = 0;
     this.orderService.cartUpdated(this.productModel, 'x');
   }
+*/
 
-
-  /*
-    validateQty(inputElement: HTMLInputElement) {
-
-      let strInputQty = inputElement.value;
-      // inputElement.value = 'AAA'
-      console.log("L0G: validateQty(): strInputQty -> " + strInputQty)
-
-      let isNumber = !isNaN(+strInputQty);
-
-      if (!isNumber) {
-        inputElement.value = '0';
-        return;
-      }
-
-      let tempNumber = parseInt(strInputQty);
-      if (tempNumber < 0 || tempNumber > 1000) inputElement.value ="999";
-
-    }
-  */
 }

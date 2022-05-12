@@ -1,3 +1,7 @@
+# 6th Commit - Updated Order-Qty, Order-Cart Component & Product-Item Component
+1. Fixed X Btn. of Order-Qty Component
+2. Updated HTML Template Structure of Order-Cart Component & Product-Item Component.
+
 # 5th Commit - Updated Order Cart Component
 1. Order Cart updated & is in Sync with whatever products added / removed. 
    Order Cart Component's cartProductList is in Sync with the Product-List Component's cartProductList.
