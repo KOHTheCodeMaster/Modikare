@@ -1,28 +1,35 @@
-<div class="container-fluid">
-  <p>order-summary works!</p>
+<div class="basic-border-green">
 
-  <div class="row" id="order-summary-header">
-    <span class="col-lg-2">Unique Product Count</span>
-    <span class="col-lg-2">Total Qty</span>
-    <span class="col-lg-2">Total MRP</span>
-    <span class="col-lg-2">Total DP</span>
-    <span class="col-lg-2">Total BV</span>
-    <span class="col-lg-2">Total PV</span>
-  </div>
+  <div *ngIf="orderSummaryModel.totalQty !== 0; else cartIsEmpty;" class="container basic-border-red">
+    <p>Order Summary</p>
 
-  <div class="row" id="order-summary-content">
-    <span class="col-lg-2">{{orderSummaryModel.uniqueProductCount}}</span>
-    <span class="col-lg-2">{{orderSummaryModel.totalQty}}</span>
-    <span class="col-lg-2">{{orderSummaryModel.totalMRP}}</span>
-    <span class="col-lg-2">{{orderSummaryModel.totalDP}}</span>
-    <span class="col-lg-2">{{orderSummaryModel.totalBV}}</span>
-    <span class="col-lg-2">{{orderSummaryModel.totalPV}}</span>
-  </div>
+    <div class="row text-center fs-4  basic-border-green" id="order-summary-header">
+      <span class="col-lg-2">Product Count</span>
+      <span class="col-lg-2">Total Qty</span>
+      <span class="col-lg-2">Total MRP</span>
+      <span class="col-lg-2">Total DP</span>
+      <span class="col-lg-2">Total BV</span>
+      <span class="col-lg-2">Total PV</span>
+    </div>
 
-  <div class="row">
-    <div class="col-lg-8">
-      <h2>Net. Amount: {{ orderSummaryModel.netAmount }}</h2>
+    <div class="row text-center fs-4 basic-border-yellow" id="order-summary-content">
+      <span class="col-lg-2">{{orderSummaryModel.uniqueProductCount}}</span>
+      <span class="col-lg-2">{{orderSummaryModel.totalQty}}</span>
+      <span class="col-lg-2">{{orderSummaryModel.totalMRP}}</span>
+      <span class="col-lg-2">{{orderSummaryModel.totalDP}}</span>
+      <span class="col-lg-2">{{orderSummaryModel.totalBV}}</span>
+      <span class="col-lg-2">{{orderSummaryModel.totalPV}}</span>
+    </div>
+
+    <div class="row text-end">
+      <span class="col fs-4 text-info basic-border-yellow">
+        Net. Amount: {{ orderSummaryModel.netAmount }}
+      </span>
     </div>
   </div>
+
+  <ng-template #cartIsEmpty class="container">
+    <h3>Cart Is Empty.</h3>
+  </ng-template>
 
 </div>

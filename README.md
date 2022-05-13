@@ -1,3 +1,9 @@
+# 7th Commit - Updated Order-Summary Component
+1. Updated Order-Summary Component to be in Sync with Order Cart.  
+2. Updated resetQty method in Product-Item Component & Cart-Product-Item Component.
+   Store & pass qty to cartUpdated() for the product before resetting it to 0 so that Order-Summary could be updated accordingly. 
+3. Removed 'Search' Btn from Product-Search Component
+
 # 6th Commit - Updated Order-Qty, Order-Cart Component & Product-Item Component
 1. Fixed X Btn. of Order-Qty Component
 2. Updated HTML Template Structure of Order-Cart Component & Product-Item Component.

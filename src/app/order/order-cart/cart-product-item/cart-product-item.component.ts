@@ -19,7 +19,8 @@ export class CartProductItemComponent implements OnInit {
   }
 
   resetQty() {
+    let tempDeletedProductQty = this.productModel.qty;
     this.productModel.qty = 0;
-    this.orderService.cartUpdated(this.productModel, 'x');
+    this.orderService.cartUpdated(this.productModel, 'x', tempDeletedProductQty);
   }
 }

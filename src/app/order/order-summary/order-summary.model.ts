@@ -1,14 +1,9 @@
 export class OrderSummaryModel {
 
-  totalMRP: number;
-  totalDP: number;
-  totalBV: number;
-  totalPV: number;
-  totalQty: number;
-  uniqueProductCount: number;
-  netAmount: number;
 
-  constructor() {
+  constructor(public totalMRP: number, public totalDP: number, public totalBV: number,
+              public totalPV: number, public totalQty: number, public uniqueProductCount: number,
+              public netAmount: number) {
   }
 
 }

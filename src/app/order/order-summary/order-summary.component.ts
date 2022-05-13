@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {OrderSummaryModel} from "./order-summary.model";
+import {OrderService} from "../order.service";
 
 @Component({
   selector: 'app-order-summary',
@@ -9,15 +10,16 @@ import {OrderSummaryModel} from "./order-summary.model";
 export class OrderSummaryComponent implements OnInit {
   public orderSummaryModel: OrderSummaryModel;
 
-  constructor() {
+  constructor(private orderService: OrderService) {
+    this.orderSummaryModel = orderService.getOrderSummaryModel();
   }
 
   ngOnInit(): void {
-    this.init();
+    // this.init();
   }
 
   init() {
-    this.orderSummaryModel = new OrderSummaryModel();
+    // this.orderSummaryModel = new OrderSummaryModel();
     this.orderSummaryModel.uniqueProductCount = 2;
     this.orderSummaryModel.totalMRP = 500;
     this.orderSummaryModel.totalDP = 400;

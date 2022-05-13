@@ -1,5 +1,6 @@
 import {ProductModel} from "./order-product/product-search/product-list/product.model";
 import {EventEmitter} from "@angular/core";
+import {OrderSummaryModel} from "./order-summary/order-summary.model";
 
 export class OrderService {
 
@@ -7,9 +8,14 @@ export class OrderService {
 
   productList: ProductModel[];
   cartProductList: ProductModel[];
+  orderSummaryModel: OrderSummaryModel;
 
   constructor() {
     this.init();
+  }
+
+  getOrderSummaryModel() {
+    return this.orderSummaryModel;
   }
 
   getProductList() {
@@ -20,21 +26,63 @@ export class OrderService {
     return this.cartProductList;
   }
 
-  cartUpdated(productModel: ProductModel, strQtyUpdateParam: string) {
+  cartUpdated(productModel: ProductModel, strQtyUpdateParam: string, deletedProductQty?: number) {
 
     let pos = this.getPosFromCartProductList(productModel);
 
     // given productModel doesn't exists in the cart yet, Adding it now.
     if (pos === -1) {
       this.cartProductList.push(productModel);
+      this.updateOrderSummaryModel(productModel, 'add');
       return;
     }
 
-    //  If Delete Btn. is clicked or If '-' btn. is clicked & qty becomes 0, then remove from cart
-    if (strQtyUpdateParam === 'x' ||
-      (strQtyUpdateParam === '-' && this.cartProductList[pos].qty === 0))
+    //  If Delete Btn. is clicked
+    if (strQtyUpdateParam === 'x') {
       this.cartProductList.splice(pos, 1);
+      this.updateOrderSummaryModel(productModel, 'x', deletedProductQty);
+      return;
+    }
 
+    //  Update Order Summary by removing 1 Product Item Values
+    if (strQtyUpdateParam === '-') {
+      // If '-' btn. is clicked & qty becomes 0, then remove from cart
+      if (this.cartProductList[pos].qty === 0) this.cartProductList.splice(pos, 1);
+      this.updateOrderSummaryModel(productModel, '-');
+    }
+
+    //  Update Order Summary by adding 1 Product Item Values
+    if (strQtyUpdateParam === '+') this.updateOrderSummaryModel(productModel, '+');
+
+  }
+
+  private updateOrderSummaryModel(productModel: ProductModel, strUpdateParam: string, deletedProductQty?: number) {
+
+    this.orderSummaryModel.uniqueProductCount = this.cartProductList.length;
+    deletedProductQty = deletedProductQty != null ? deletedProductQty : 0;
+
+    if (strUpdateParam === '+' || strUpdateParam === 'add') {
+      this.orderSummaryModel.netAmount += productModel.dp;
+      this.orderSummaryModel.totalDP += productModel.dp;
+      this.orderSummaryModel.totalMRP += productModel.mrp;
+      this.orderSummaryModel.totalPV += productModel.pv;
+      this.orderSummaryModel.totalBV += productModel.bv;
+      this.orderSummaryModel.totalQty++;
+    } else if (strUpdateParam === '-') {
+      this.orderSummaryModel.netAmount -= productModel.dp;
+      this.orderSummaryModel.totalDP -= productModel.dp;
+      this.orderSummaryModel.totalMRP -= productModel.mrp;
+      this.orderSummaryModel.totalPV -= productModel.pv;
+      this.orderSummaryModel.totalBV -= productModel.bv;
+      this.orderSummaryModel.totalQty--;
+    } else if (strUpdateParam === 'x') {
+      this.orderSummaryModel.netAmount -= productModel.dp * deletedProductQty;
+      this.orderSummaryModel.totalDP -= productModel.dp * deletedProductQty;
+      this.orderSummaryModel.totalMRP -= productModel.mrp * deletedProductQty;
+      this.orderSummaryModel.totalPV -= productModel.pv * deletedProductQty;
+      this.orderSummaryModel.totalBV -= productModel.bv * deletedProductQty;
+      this.orderSummaryModel.totalQty -= deletedProductQty;
+    }
   }
 
   private getPosFromCartProductList(productModel: ProductModel) {
@@ -52,6 +100,7 @@ export class OrderService {
     console.log("Initialize Product List.");
     this.stubProductList();
     this.cartProductList = [];
+    this.orderSummaryModel = new OrderSummaryModel(0, 0, 0, 0, 0, 0, 0);
   }
 
   stubProductList() {
