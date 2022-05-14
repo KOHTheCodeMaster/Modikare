@@ -1,25 +1,13 @@
 <div class="container-fluid basic-border-red">
   <!--  <p>product-search works!</p>-->
 
-  <!-- <div class="input-group">
-      <div class="form-outline">
-          <label class="form-label" for="form1">Search</label>
-          <input type="search" id="form1" class="form-control" />
-      </div>
-      <button type="button" class="btn btn-primary">
-          <i class="fas fa-search"></i>
-      </button>
-  </div> -->
-
   <div class="input-group rounded mt-2">
+    <label for="inputSearchElement"></label>
     <input [(ngModel)]="strSearch"
+           id="inputSearchElement"
            class="form-control rounded placeholder-wave text-info"
-           placeholder="Search"
-           type="search"
-           aria-describedby="search-addon"
-           aria-label="Search"/>
-    <button class="btn btn-danger border-0" id="search-clear" (click)="strSearch = ''">Clear</button>
-<!--    <span class="btn btn-primary border-0" id="search-addon">Search</span>-->
+           placeholder="Search"/>
+        <button class="btn btn-danger border-0" (click)="this.strSearch = ''">Clear</button>
   </div>
   <hr>
 

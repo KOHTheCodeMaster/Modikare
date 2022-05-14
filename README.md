@@ -1,3 +1,7 @@
+# 8th Commit - Updated Products List
+1. Stub Product List with 781 products.
+2. Need to add scrollbar in productList to avoid the delay caused by rendering huge data.
+
 # 7th Commit - Updated Order-Summary Component
 1. Updated Order-Summary Component to be in Sync with Order Cart.  
 2. Updated resetQty method in Product-Item Component & Cart-Product-Item Component.
