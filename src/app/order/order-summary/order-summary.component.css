@@ -1,0 +1,9 @@
+
+.zero-margin-padding {
+  margin: 0;
+  padding: 0;
+}
+
+#idCartIsEmptyPara {
+  padding: 1.5em;
+}

@@ -1,3 +1,30 @@
+# 9th Commit - Smooth Scrollbars Added.
+1. Added Scrollbar in Product-List component:
+   ```
+   <div id="idProductListContainer">
+       <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+         <div *cdkVirtualFor="let product of (productList | productListFilterPipe:strSearch)"
+              class="">
+           <app-product-item [productModel]="product"></app-product-item>
+         </div>
+       </cdk-virtual-scroll-viewport>
+     </div>
+   ```
+2. Installed cdk module for smooth scrolling -> `npm i @angular/cdk --save`
+3. Removed nav-header component from display.
+4. Updated Components CSS for adjusting height & scrollbar: <br>
+   a. Order
+   b. Order-Summary
+   c. Product-Search -> Rounded input & clear btn along with m-1 margin. 
+5. Added CSS Properties for order-cart component.
+   ```css
+       #idOrderCartContainer {
+         max-height: 75vh;
+         /*height: auto;*/
+         overflow: auto;
+       }
+   ```
+
 # 8th Commit - Updated Products List
 1. Stub Product List with 781 products.
 2. Need to add scrollbar in productList to avoid the delay caused by rendering huge data.

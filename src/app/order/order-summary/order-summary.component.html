@@ -1,9 +1,17 @@
-<div class="basic-border-green">
+<div class="container basic-border-blue">
 
-  <div *ngIf="orderSummaryModel.totalQty !== 0; else cartIsEmpty;" class="container basic-border-red">
-    <p>Order Summary</p>
+  <span class="fs-3 basic-border-red">Order Summary</span>
 
-    <div class="row text-center fs-4  basic-border-green" id="order-summary-header">
+  <ng-template #cartIsEmpty class="d-flex justify-content-center">
+    <div class="row fs-4 text-center justify-content-center basic-border-blue ">
+      <p id="idCartIsEmptyPara" class="col-lg-6 m-0 basic-border-green">Cart Is Empty.</p>
+    </div>
+  </ng-template>
+
+  <div *ngIf="orderSummaryModel.totalQty !== 0; else cartIsEmpty;">
+    <!--    <p>Order Summary</p>-->
+
+    <div class="row text-center fs-4 zero-margin-padding  basic-border-green" id="order-summary-header">
       <span class="col-lg-2">Product Count</span>
       <span class="col-lg-2">Total Qty</span>
       <span class="col-lg-2">Total MRP</span>
@@ -12,7 +20,7 @@
       <span class="col-lg-2">Total PV</span>
     </div>
 
-    <div class="row text-center fs-4 basic-border-yellow" id="order-summary-content">
+    <div class="row text-center zero-margin-padding fs-4 basic-border-yellow" id="order-summary-content">
       <span class="col-lg-2">{{orderSummaryModel.uniqueProductCount}}</span>
       <span class="col-lg-2">{{orderSummaryModel.totalQty}}</span>
       <span class="col-lg-2">{{orderSummaryModel.totalMRP}}</span>
@@ -21,15 +29,11 @@
       <span class="col-lg-2">{{orderSummaryModel.totalPV.toFixed(2)}}</span>
     </div>
 
-    <div class="row text-end">
-      <span class="col fs-4 text-info basic-border-yellow">
+    <div class="row zero-margin-padding text-end justify-content-end">
+      <span class="col-auto fs-4 text-info basic-border-yellow">
         Net. Amount: {{ orderSummaryModel.netAmount }}
       </span>
     </div>
   </div>
-
-  <ng-template #cartIsEmpty class="container">
-    <h3>Cart Is Empty.</h3>
-  </ng-template>
 
 </div>

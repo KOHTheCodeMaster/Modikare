@@ -5,9 +5,10 @@ import {OrderService} from "../../../order.service";
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent implements OnInit {
+  items = Array.from({length: 1000}).map((_, i) => `Item ${i}`);
 
   productList: ProductModel[];
   @Input() strSearch: string;

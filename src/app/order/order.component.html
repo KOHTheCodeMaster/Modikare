@@ -1,19 +1,25 @@
-<div class="container-fluid basic-border-red">
-<!--  <p>order works!</p>-->
+<div id="idOrderComponentContainer" class="">
+  <!--  <p>order works!</p>-->
 
-  <div class="row">
-    <div class="col-lg-12 basic-border-blue">
-      <app-order-summary></app-order-summary>
-    </div>
+  <!-- Order Summary Component -->
+  <div id="idOrderSummaryComponentContainer" class="container basic-border-yellow">
+    <app-order-summary></app-order-summary>
   </div>
 
-  <div class="row">
-    <div class="col-lg-9 basic-border-green">
-      <app-order-product></app-order-product>
+  <!-- Order Product & Order Cart Components -->
+  <div id="idProductSearchAndCartContainer" class="container basic-border-green">
+
+    <div class="row ">
+      <!-- Order Product Components -->
+      <div class="col-lg-9 ">
+        <app-order-product></app-order-product>
+      </div>
+      <!-- Order Cart Components -->
+      <div class="col-lg-3 zero-margin-padding">
+        <app-order-cart></app-order-cart>
+      </div>
     </div>
-    <div class="col-lg-3 basic-border-yellow m-0 p-0">
-      <app-order-cart></app-order-cart>
-    </div>
+
   </div>
 
 </div>

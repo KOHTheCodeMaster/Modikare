@@ -1,4 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+  height: 100%;
+  background-color: green;
+}
+
 * {
   background-color: #000;
   color: #fff;
@@ -19,3 +25,9 @@
 .basic-border-yellow {
   border: yellow 1px solid;
 }
+
+.zero-margin-padding {
+  margin: 0;
+  padding: 0;
+}
+

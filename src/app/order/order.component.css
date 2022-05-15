@@ -1,0 +1,15 @@
+#idOrderComponentContainer {
+  height: 100vh;
+  background-color: black;
+}
+
+#idOrderSummaryComponentContainer {
+  max-height: 25%;
+  height: auto;
+}
+
+#idProductSearchAndCartContainer {
+  /*max-height: 70%;*/
+  /*height: auto;*/
+  /*overflow: auto;*/
+}

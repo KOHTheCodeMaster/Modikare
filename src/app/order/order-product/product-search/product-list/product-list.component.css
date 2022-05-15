@@ -1,0 +1,14 @@
+#idProductListContainer {
+  height: 50vh;
+  overflow: auto;
+}
+
+.example-viewport {
+  height: 50vh;
+  overflow: auto;
+  border: 1px solid black;
+}
+
+.example-item {
+  height: 50px;
+}

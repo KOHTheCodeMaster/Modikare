@@ -1,16 +1,17 @@
-<div class="container-fluid basic-border-red">
+<div class="container basic-border-red">
   <!--  <p>product-search works!</p>-->
 
-  <div class="input-group rounded mt-2">
+  <!-- Product Search -->
+  <div class="input-group rounded mt-2 border-info border ">
     <label for="inputSearchElement"></label>
     <input [(ngModel)]="strSearch"
            id="inputSearchElement"
            class="form-control rounded placeholder-wave text-info"
            placeholder="Search"/>
-        <button class="btn btn-danger border-0" (click)="this.strSearch = ''">Clear</button>
+        <button class="btn btn-danger rounded m-1 border-0" (click)="this.strSearch = ''">Clear</button>
   </div>
   <hr>
-
+  <!-- Product-List Component -->
   <app-product-list [strSearch]="strSearch"></app-product-list>
 
 </div>

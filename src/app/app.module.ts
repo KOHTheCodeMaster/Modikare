@@ -15,8 +15,14 @@ import {ProductListFilterPipe} from "./order/order-product/product-search/produc
 import {FormsModule} from "@angular/forms";
 import {CartProductItemComponent} from './order/order-cart/cart-product-item/cart-product-item.component';
 import {OrderQtyComponent} from './order/order-qty/order-qty.component';
+import {ScrollingModule} from "@angular/cdk/scrolling";
 
 @NgModule({
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ScrollingModule
+  ],
   declarations: [
     AppComponent,
     NavHeaderComponent,
@@ -31,10 +37,6 @@ import {OrderQtyComponent} from './order/order-qty/order-qty.component';
     ProductListFilterPipe,
     CartProductItemComponent,
     OrderQtyComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -98,7 +98,8 @@ export class OrderService {
 
   init() {
     console.log("Initialize Product List.");
-    this.stubProductList2();
+    this.stubProductList();
+    // this.stubProductList2();
     this.cartProductList = [];
     this.orderSummaryModel = new OrderSummaryModel(0, 0, 0, 0, 0, 0, 0);
   }
