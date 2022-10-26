@@ -1,3 +1,7 @@
+# 10th Commit - DataRefresh Module
+1. Using Selenium Browser Automation.
+2. Download The Latest Product Pricing Details & save the product pojo list in Json file.
+
 # 9th Commit - Smooth Scrollbars Added.
 1. Added Scrollbar in Product-List component:
    ```
